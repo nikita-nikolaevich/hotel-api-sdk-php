@@ -17,15 +17,12 @@ namespace hotelbeds\hotel_api_sdk\model;
  */
 class Boards extends ApiModel
 {
-    public function __construct(array $data = null)
+    public function __construct()
     {
         $this->validFields = [
             "included" => "boolean",
             "board" => "array",
         ];
 
-        if (null !== $data) {
-            $this->fields = $data;
-        }
     }
 }
