@@ -45,6 +45,7 @@ use hotelbeds\hotel_api_sdk\messages\ApiRequest;
 
 use Zend\Http\Client;
 use Zend\Http\Request;
+use Zend\Http\Response;
 use Zend\Uri\UriFactory;
 
 /**
@@ -88,7 +89,11 @@ class HotelApiClient
      * @var Request Last sent request
      */
     private $lastRequest;
-    
+
+    /**
+     * @var Response Last sent request
+     */
+    private $lastResponse;
 
     /**
      * HotelApiClient Constructor they initialize SDK Client.
@@ -163,6 +168,7 @@ class HotelApiClient
             $signature = hash("sha256", $this->apiKey.$this->sharedSecret.time());
             $this->lastRequest = $request->prepare($this->apiKey, $signature);
             $response = $this->httpClient->send($this->lastRequest);
+            $this->lastResponse = $response;
         } catch (\Exception $e) {
             throw new HotelSDKException("Error accessing API: " . $e->getMessage());
         }
@@ -191,4 +197,14 @@ class HotelApiClient
     {
         return $this->lastRequest;
     }
+
+    /**
+     * @return Response
+     */
+    public function getLastResponse(): Response
+    {
+        return $this->lastResponse;
+    }
+
+
 }
