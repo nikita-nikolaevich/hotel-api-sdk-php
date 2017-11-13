@@ -37,6 +37,7 @@ namespace hotelbeds\hotel_api_sdk\model;
  * @property array taxes List of taxes
  * @property array promotions List of promotions
  * @property array dailyRates List of daily rates
+ * @property integer allotment Number of rooms available for a particular room type
  */
 
 class Rate extends ApiModel
@@ -71,7 +72,8 @@ class Rate extends ApiModel
              "cancellationPolicies" => "array",
              "taxes" => "array",
              "promotions" => "array",
-             "dailyRates" => "array"];
+             "dailyRates" => "array",
+             "allotment" => "integer"];
 
         if ($data !== null)
         {
