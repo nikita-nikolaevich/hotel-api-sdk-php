@@ -17,6 +17,7 @@ use hotelbeds\hotel_api_sdk\model\Stay;
 use hotelbeds\hotel_api_sdk\types\ApiVersion;
 use hotelbeds\hotel_api_sdk\types\ApiVersions;
 use hotelbeds\hotel_api_sdk\messages\AvailabilityRS;
+use hotelbeds\hotel_api_sdk\model\Boards;
 
 
 $reader = new Zend\Config\Reader\Ini();
@@ -30,8 +31,8 @@ $apiClient = new HotelApiClient($cfgApi["url"],
     $cfgApi["timeout"]);
 
 $rqData = new \hotelbeds\hotel_api_sdk\helpers\Availability();
-$rqData->stay = new Stay(DateTime::createFromFormat("Y-m-d", "2017-12-15"),
-    DateTime::createFromFormat("Y-m-d", "2017-12-20"));
+$rqData->stay = new Stay(DateTime::createFromFormat("Y-m-d", "2018-12-15"),
+    DateTime::createFromFormat("Y-m-d", "2018-12-20"));
 
 $rqData->hotels = [ "hotel" => [ 1067,1071,1072,1073,1075 ] ];
 //$rqData->destination = new Destination("PMI");//By default this search type is disabled
@@ -43,6 +44,10 @@ $occupancy->rooms = 1;
 $occupancy->paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe"), new Pax(Pax::AD, 27, "Jane", "Doe"), new Pax(Pax::CH, 8, "Mack", "Doe") ];
 //$occupancy->paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1) ];
 
+$boards = new Boards();
+$boards->included=true;
+$boards->board=["RO","BB"];
+$rqData->boards=$boards;
 
 $rqData->occupancies = [ $occupancy ];
 
