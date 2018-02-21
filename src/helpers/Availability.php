@@ -8,6 +8,7 @@
 
 namespace hotelbeds\hotel_api_sdk\helpers;
 use hotelbeds\hotel_api_sdk\model\Destination;
+use hotelbeds\hotel_api_sdk\model\Filter;
 use hotelbeds\hotel_api_sdk\model\Geolocation;
 use hotelbeds\hotel_api_sdk\model\Stay;
 
@@ -40,7 +41,7 @@ class Availability extends ApiHelper
                 "destination" => "hotelbeds\\hotel_api_sdk\\model\\Destination",
                 "keywords" => "array",
                 "hotels" => "array",
-                "board" => "string",
+                "boards" => "hotelbeds\\hotel_api_sdk\\model\\Boards",
                 "sourceMarket" => "string",
                 "dailyRate" => "boolean",
                 "language" => "string",
