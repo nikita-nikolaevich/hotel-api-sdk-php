@@ -11,6 +11,7 @@ use hotelbeds\hotel_api_sdk\model\Destination;
 use hotelbeds\hotel_api_sdk\model\Filter;
 use hotelbeds\hotel_api_sdk\model\Geolocation;
 use hotelbeds\hotel_api_sdk\model\Stay;
+use hotelbeds\hotel_api_sdk\model\Boards;
 
 /**
  * Class Availability
@@ -25,6 +26,7 @@ use hotelbeds\hotel_api_sdk\model\Stay;
  * @property boolean $dailyRate Display the rate day by day
  * @property string $language Language of the response
  * @property Filter $filter Filters for availability
+ * @property Boards $boards Boards for availability
  */
 
 class Availability extends ApiHelper

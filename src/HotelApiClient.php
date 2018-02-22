@@ -199,9 +199,9 @@ class HotelApiClient
     }
 
     /**
-     * @return Response
+     * @return Response getLastResponse Returns entire raw response
      */
-    public function getLastResponse(): Response
+    public function getLastResponse()
     {
         return $this->lastResponse;
     }
