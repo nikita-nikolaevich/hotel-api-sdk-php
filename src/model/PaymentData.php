@@ -15,6 +15,9 @@ use hotelbeds\hotel_api_sdk\model\ContractData;
  * @package hotelbeds\hotel_api_sdk\model
  * @property PaymentCard paymentCard Payment Card info
  * @property ContractData contactData ContractData
+ * @property array billingAddress
+ * @property integer webPartner
+ * @property array device
  */
 class PaymentData extends ApiModel
 {
@@ -22,7 +25,10 @@ class PaymentData extends ApiModel
     {
         $this->validFields = [
             "paymentCard" => "hotelbeds\\hotel_api_sdk\\model\\PaymentCard",
-            "contactData" => "hotelbeds\\hotel_api_sdk\\model\\ContractData"
+            "contactData" => "hotelbeds\\hotel_api_sdk\\model\\ContractData",
+            "billingAddress" => "array",
+            "webPartner" => "integer",
+            "device" => "array"
         ];
     }
 }

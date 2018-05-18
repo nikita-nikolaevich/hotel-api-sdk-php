@@ -38,7 +38,7 @@ $paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1), new Pax(Pax::AD, 27, "Jane", 
 //$paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1) ];
 
 $rqBookingConfirm = new \hotelbeds\hotel_api_sdk\helpers\Booking();
-$rqBookingConfirm->holder = new \hotelbeds\hotel_api_sdk\model\Holder("Hotelbeds", "PHP_IS_FUN");
+$rqBookingConfirm->holder = new \hotelbeds\hotel_api_sdk\model\Holder("Hotelbeds", "SDK Test");
 $rqBookingConfirm->language="ENG";
 
 $bookingRoom = new \hotelbeds\hotel_api_sdk\model\BookingRoom($rateKey);
@@ -85,4 +85,23 @@ try {
     echo "<br><br>".$apiClient->getLastRequest();
 }
 
+/* Test Booking list
+$rqBookingList = new \hotelbeds\hotel_api_sdk\helpers\BookingList();
+$rqBookingList->start= DateTime::createFromFormat("Y-m-d", "2018-05-01");
+$rqBookingList->end= DateTime::createFromFormat("Y-m-d", "2018-05-30");
+$rqBookingList->filterType = "CREATION";
+$rqBookingList->status = "ALL";
+$rqBookingList->from = 1;
+$rqBookingList->to = 25;
+try {
+    echo "\n---TEST BOOKING LIST---\n";
+    $bookingListRS = $apiClient->BookingList($rqBookingList);
+    echo "<pre>".json_encode($bookingListRS->bookings->toArray(), JSON_PRETTY_PRINT)."</pre>";
+    echo "<pre>".json_encode($bookingListRS->bookings->iterator()->current()->reference, JSON_PRETTY_PRINT)."</pre>";
+}
+catch (\hotelbeds\hotel_api_sdk\types\HotelSDKException $e) {
+    echo "\n" . $e->getMessage() . "\n";
+    echo "<br><br>" . $apiClient->getLastRequest();
+}
+*/
 return null;

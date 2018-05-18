@@ -23,16 +23,22 @@ class Booking extends ApiModel
     {
         $this->validFields = [
             "reference" => "string",
+            "cancellationReference" => "string",
+            "clientReference" => "string",
+            "modificationPolicies" => "array",
             "creationDate" => "string",
-            "totalNet" => "float",
-            "totalSellingRate" => "float",
-            "totalPending" => "float",
+            "creationUser" => "string",
+            "totalNet" => "double",
+            "totalSellingRate" => "double",
+            "pendingAmount" => "double",
             "currency" => "string",
-            "status" => "string",
+            "status" => "array",
             "holder" => "array",
-            "commisionVAT" => "float",
+            "commisionVAT" => "double",
+            "agCommision" => "double",
             "remark" => "string",
-            "hotel" => "array"
+            "hotel" => "array",
+            "invoiceCompany" => "array"
         ];
 
         if ($data !== null)
