@@ -12,8 +12,8 @@ namespace hotelbeds\hotel_api_sdk\model;
  * Class DailyRate
  * @package hotelbeds\hotel_api_sdk\model
  * @property integer offset Offset price
- * @property float dailyNet Net price
- * @property float dailySellingRate price
+ * @property double dailyNet Net price
+ * @property double dailySellingRate price
  */
 
 class DailyRate extends ApiModel
@@ -22,8 +22,8 @@ class DailyRate extends ApiModel
     {
         $this->validFields = [
             "offset" => "integer",
-            "dailyNet" => "float",
-            "dailySellingRate" => "float"
+            "dailyNet" => "double",
+            "dailySellingRate" => "double"
         ];
 
         if ($data !== null)

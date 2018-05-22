@@ -48,6 +48,9 @@ $boards = new Boards();
 $boards->included=true;
 $boards->board=["RO","BB"];
 $rqData->boards=$boards;
+//$filter = new \hotelbeds\hotel_api_sdk\model\Filter();
+//$filter->contract="FIT-USD";
+//$rqData->filter=$filter;
 
 $rqData->occupancies = [ $occupancy ];
 

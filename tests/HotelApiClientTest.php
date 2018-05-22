@@ -191,7 +191,8 @@ class HotelApiClientTest extends PHPUnit\Framework\TestCase
     public function testCheckRateRS(CheckRateRS $checkRS)
     {
         $this->assertNotEmpty($checkRS->hotel->totalNet);
-        $this->assertNotEmpty($checkRS->hotel->totalSellingRate);
+        //$this->assertNotEmpty($checkRS->hotel->totalSellingRate);
+        $this->assertNotEmpty($checkRS->hotel->currency);
     }
 
 
