@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Tomeu
- * Date: 11/4/2015
- * Time: 7:25 PM
+ * User: vmavromatis
+ * Date: 03/09/2018
+ * Time: 11:29 PM
  */
 
 namespace hotelbeds\hotel_api_sdk\helpers;
@@ -27,6 +27,7 @@ use hotelbeds\hotel_api_sdk\model\Boards;
  * @property string $language Language of the response
  * @property Filter $filter Filters for availability
  * @property Boards $boards Boards for availability
+ * @property array $accommodations Array of accommodation strings to filter by APARTMENT,APTHOTEL,CAMPING,HOMES,HOSTEL,HOTEL,PENDING,RESORT,RURAL
  */
 
 class Availability extends ApiHelper
@@ -47,6 +48,7 @@ class Availability extends ApiHelper
                 "sourceMarket" => "string",
                 "dailyRate" => "boolean",
                 "language" => "string",
+                "accommodations"=> "array",
                 "filter" => "hotelbeds\\hotel_api_sdk\\model\\Filter"
                 ];
     }
