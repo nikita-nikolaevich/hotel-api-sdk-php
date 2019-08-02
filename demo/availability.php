@@ -31,8 +31,8 @@ $apiClient = new HotelApiClient($cfgApi["url"],
     $cfgApi["timeout"]);
 
 $rqData = new \hotelbeds\hotel_api_sdk\helpers\Availability();
-$rqData->stay = new Stay(DateTime::createFromFormat("Y-m-d", "2018-12-15"),
-    DateTime::createFromFormat("Y-m-d", "2018-12-20"));
+$rqData->stay = new Stay(DateTime::createFromFormat("Y-m-d", "2019-12-15"),
+    DateTime::createFromFormat("Y-m-d", "2019-12-20"));
 
 $rqData->hotels = [ "hotel" => [ 1067,1071,1072,1073,1075 ] ];
 //$rqData->destination = new Destination("PMI");//By default this search type is disabled

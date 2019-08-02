@@ -20,7 +20,8 @@ use hotelbeds\hotel_api_sdk\model\PaymentData;
  * @property PaymentData paymentData Payment information. This node must be used if paymentType = 'AT_HOTEL'
  * @property string language Response language 
  * @property string remark Client remark
- * @property string platform Platform
+ * @property integer platform Platform
+ * @property double tolerance Margin of price difference (as percentage) accepted when a price difference occurs between Availability/CheckRate and Booking operations.
  */
 class Booking extends ApiHelper
 {
@@ -33,7 +34,8 @@ class Booking extends ApiHelper
             "clientReference" => "string",
             "paymentData" => "hotelbeds\\hotel_api_sdk\\model\\PaymentData",
         	"remark" => "string",
-        	"platform" => "integer"
+        	"platform" => "integer",
+            "tolerance" => "double"
         ];
     }
 }

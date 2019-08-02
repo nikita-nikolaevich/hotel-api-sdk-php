@@ -30,8 +30,8 @@ $apiClient = new HotelApiClient($cfgApi["url"],
     new ApiVersion(ApiVersions::V1_2), 
     $cfgApi["timeout"]); //Make sure you use 1.2 for no CC details and 1.0 version for CC details w/ secure URL.
 
-$rateKey = urldecode($_GET['ratekey']);
-//$rateKey = "20171115|20171120|W|1|1075|TPL.VM|CG-TODOS BB|BB||1~2~1|8|N@5897F2A3FEF5401B8A86C4A57DD34DD91542";
+//$rateKey = urldecode($_GET['ratekey']);
+$rateKey = "20191215|20191220|W|1|1072|JSU.ST|NRF-TODOS RO1|RO||1~2~1|8|N@02~~10FFD24D532D4E0156473431668200AAES0000003000200020625a207";
 
 //$paxes = [ new Pax(Pax::AD, 30, "Miquel", "Fiol",1), new Pax(Pax::AD, 27, "Margalida", "Soberats",1), new Pax(Pax::CH, 8, "Josep", "Fiol",1) ];
 $paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1), new Pax(Pax::AD, 27, "Jane", "Doe", 1), new Pax(Pax::CH, 8, "Mack", "Doe", 1) ];
@@ -40,6 +40,7 @@ $paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1), new Pax(Pax::AD, 27, "Jane", 
 $rqBookingConfirm = new \hotelbeds\hotel_api_sdk\helpers\Booking();
 $rqBookingConfirm->holder = new \hotelbeds\hotel_api_sdk\model\Holder("Hotelbeds", "SDK Test");
 $rqBookingConfirm->language="ENG";
+$rqBookingConfirm->tolerance=2.00;
 
 $bookingRoom = new \hotelbeds\hotel_api_sdk\model\BookingRoom($rateKey);
 $bookingRoom->paxes = $paxes;
